@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+  .row
+    .well.span4.offset4
+      ul.unstyled
+        for user in users
+          li
+            strong #{user.name}: #{user.id}
+      p
+        a.btn.btn-primary(href=path.pathFor('user.new'))
+          i.icon-user.icon-white
+          |  New User
+        a.btn(href=path.pathFor('index'))
+          i.icon-home
+          |  Home
